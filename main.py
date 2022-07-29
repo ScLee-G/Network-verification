@@ -8,7 +8,7 @@ def main():
     xlsx_path = path_to_web_excel
     base_path = path_to_save_screenshot
     company_list_path = path_to_company_name
-    address = input("请按”中国/省/市“格式输入核查公司的注册地信息：").split("/")
+    address = input("请按“中国/省/市”格式输入核查公司的注册地信息：").split("/")
 
     company_names = []
 
