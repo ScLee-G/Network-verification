@@ -1,5 +1,5 @@
 # Network-verification
-This is a project that help collect information on whether a company has illegal Records.
+A project help verify illegal records of a company, mainly for due diligence.
 ## File schema & Introduction
 ```bash
 |-- Network-verification
