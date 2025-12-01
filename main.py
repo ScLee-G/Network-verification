@@ -1,21 +1,21 @@
 import os
 import pandas as pd
-from classify import scs
+from classify_pdf import scs
 from os.path import join
 
 def main():
     # Path of related files
-    xlsx_path = path_to_web_excel
-    base_path = path_to_save_screenshot
-    company_list_path = path_to_company_name
+    xlsx_path = r"D:\Git_Clone\Network_Verification\web_sources_base.xlsx"
+    base_path = r"D:\Git_Clone\Network_Verification"
+    company_list_path = r"D:\Git_Clone\Network_Verification\Vendor_List_1.xlsx"
     address = input("请按“中国/省/市”格式输入核查公司的注册地信息：").split("/")
 
     company_names = []
 
     # Read the companies list
-    with open(company_list_path, "r", encoding="utf-8") as f:
-        for line in f.readlines():
-            company_names.append(line.rstrip())
+    df_companies = pd.read_excel(company_list_path)
+    # Assuming the first column contains company names
+    company_names = df_companies.iloc[:, 0].dropna().tolist()
 
     # Read the websites list
     df = pd.read_excel(xlsx_path)
